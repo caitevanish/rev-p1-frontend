@@ -23,14 +23,37 @@
     <nav>Home</nav>
     <div id="welcomeBanner">
       <h1>Hello {First name here}!</h1>
+
+      <!-- COMPLAINT FORM -->
       <div id="complaintBox">
         <h2>Report a complaint</h2>
         <p>Is there something on your mind?</p>
         <button id="complaintBtn">Tell us about it</button>
+        <div>
+          <div class="modal-body tempPadding tempBorder">
+            <form action="" method="post">
+              <fieldset>
+                <legend>Write your complaint here:</legend>
+                <textarea
+                  name="description"
+                  id="complaintInput"
+                  placeholder="So this thing happened recently..."
+                  cols="50"
+                  rows="5"
+                ></textarea>
+              </fieldset>
+              <button id="complaintSubmitBtn" type="submit" disabled>
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
       <div id="main">
-        <div>
+        <div class="tempPadding">
           <h3>Upcoming Meetings</h3>
+
+          <!-- MEETING TABLE -->
           <div id="meetingTable">
             <table class="table">
               <thead>
@@ -42,7 +65,7 @@
                   <th scope="col"></th>
                 </tr>
               </thead>
-              <tbody id="meetingTable">
+              <tbody id="meetingTableBody">
                 <!-- <tr>
                   <th scope="row">101</th>
                   <td>1660675993</td>
@@ -54,6 +77,27 @@
                 </tr> -->
               </tbody>
             </table>
+          </div>
+          </div>
+
+
+          <!-- COMPLAINT TABLE -->
+          <div class="tempPadding">
+            <div id="complaintTable">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Meeting</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody id="compaintTableBody"></tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -76,49 +120,14 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
     <script>
       // -----Main variables-----
-
       const welcomeBanner = document.getElementById('welcomeBanner'); //Says user's name
       const complaintBtn = document.getElementById('complaintBtn'); //opens complaint modal
-
-      // ----- Meetings Table Async Functions -----
-
-      const meetingTableBody = document.getElementById('meetingTable'); //shows upcoming meetings
-      const meetingDetailsBtn = document.getElementById('meetingDetailsBtn'); //Get meeting by id, open in a modal
-
-      async function getAllMeetings() {
-        const httpResponse = await fetch(' '); //url for the meetings table here
-        const meetings = await httpResponse.json();
-        return meetings;
-      }
-
-      async function renderMeetingTable() {
-        const meetingList = await getAllMeetings();
-
-        for (const meeting of meetingList) {
-          const meetingRow = document.createElement('tr'); //making the row
-
-          const meetingIdData = document.createElement('th');
-          meetingIdData.innerText = meeting.meet_id;
-
-          const meetingTimeData = document.createElement('td');
-          meetingTimeData.innerText = meeting.time;
-
-          const meetingLocationData = document.createElement('td');
-          meetingLocationData.innerText = meeting.location;
-
-          const meetingSummaryData = document.createElement('td');
-          meetingSummaryData.innerText = meeting.summary;
-
-          meetingRow.appendChild(meetingIdData);
-          meetingRow.appendChild(meetingTimeData);
-          meetingRow.appendChild(meetingLocationData);
-          meetingRow.appendChild(meetingSummaryData);
-          meetingTableBody.appendChild(meetingRow);
-        }
-      }
-      renderMeetingTable();
     </script>
+
+    <!-- -----------My Scripts Linked----------- -->
+    <script src="renderMeetingsTable.js"></script>
   </body>
 </html>

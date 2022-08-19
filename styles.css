@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+}
+
+.tempBorder {
+  border: 3px;
+  border-style: solid;
+  border-color: red;
+}
+
+.tempPadding {
+  padding-top: 25px;
+  padding-bottom: 50px;
+}
