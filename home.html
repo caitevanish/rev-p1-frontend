@@ -17,7 +17,45 @@
     />
   </head>
   <body>
-    <h1>Hello Townie!</h1>
+    <nav>Home</nav>
+    <div id="welcomeBanner">
+      <h1>Hello {First name here}!</h1>
+      <div id="complaintBox">
+        <h2>Report a complaint</h2>
+        <p>Is there something on your mind?</p>
+        <button id="complaintBtn">Tell us about it</button>
+      </div>
+      <div id="main">
+        <div>
+          <h3>Upcoming Meetings</h3>
+          <div id="meetingTable">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Location</th>
+                  <th scope="col">Summary</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">101</th>
+                  <td>1660675993</td>
+                  <td>The Hogshead, Hogsmead</td>
+                  <td>Discussing the annoyances of nomaj neighbors</td>
+                  <td>
+                    <button>Details</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="main"></div>
 
     <!-- -----------bootstrap Scripts Here----------- -->
     <script
@@ -35,7 +73,11 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const welcomeBanner = document.getElementById('welcomeBanner'); //Says user's name
+      const complaintBtn = document.getElementById('complaintBtn'); //opens complaint modal
+      const meetingTable = document.getElementById('meetingTable'); //shows upcoming meetings
 
-
+    </script>
   </body>
 </html>
