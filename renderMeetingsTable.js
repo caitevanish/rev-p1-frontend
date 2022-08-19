@@ -4,8 +4,9 @@ const meetingTableBody = document.getElementById('meetingTableBody'); //shows up
 const meetingDetailsBtn = document.getElementById('meetingDetailsBtn'); //Get meeting by id, open in a modal
 
 async function getAllMeetings() {
-  const httpResponse = await fetch(' '); //url for the meetings table here
+  const httpResponse = await fetch('http://localhost:8080/meetings'); //url for the meetings table here
   const meetings = await httpResponse.json();
+  console.log(meetings);
   return meetings;
 }
 
