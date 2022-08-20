@@ -3,12 +3,16 @@
 const meetingTableBody = document.getElementById('meetingTableBody'); //shows upcoming meetings
 const meetingDetailsBtn = document.getElementById('meetingDetailsBtn'); //Get meeting by id, open in a modal
 
+//-----Fetch Data-----
+
 async function getAllMeetings() {
   const httpResponse = await fetch('http://localhost:8080/meetings'); //url for the meetings table here
   const meetings = await httpResponse.json();
   console.log(meetings);
   return meetings;
 }
+
+//-----Render Table-----
 
 async function renderMeetingTable() {
   const meetingList = await getAllMeetings();
@@ -36,3 +40,10 @@ async function renderMeetingTable() {
   }
 }
 renderMeetingTable();
+
+//-----Clear Table-----
+
+async function clearMeetingTable() {
+  const clearTableBody = document.getElementById('complaintTableBody');
+  clearTableBody.innerHTML = '';
+}
