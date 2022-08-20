@@ -6,7 +6,7 @@
 
 //-----Modal Buttons----- (for later)
 const openComplaintModal = document.getElementById('openComplaintModal');
-const closeModalBtn = document.getElementById('closeModalBtn');
+const closeModalBtn = document.getElementsByClassName('closeModalBtn');
 //Warning for when people are closing modal and there is content in the field.
 
 //-----Complaint Stuff-----

@@ -46,6 +46,6 @@ renderComplaintsTable();
 
 async function clearComplaintsTable() {
   console.log('clearing table');
-  const clearTableBody = document.getElementById('meetingTableBody');
+  const clearTableBody = document.getElementById('complaintTableBody');
   clearTableBody.innerHTML = '';
 }
