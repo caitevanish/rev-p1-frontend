@@ -45,7 +45,7 @@
       <div id="complaintBox">
         <h2>Report a complaint</h2>
         <p>Is there something on your mind?</p>
-        <button id="complaintBtn">Tell us about it</button>
+        <button id="openComplaintModal">Tell us about it</button>
         <div>
           <div class="modal-body tempPadding tempBorder">
             <form action="" method="post">
@@ -59,8 +59,11 @@
                   rows="5"
                 ></textarea>
               </fieldset>
-              <button id="complaintSubmitBtn" type="submit" disabled>
+              <button id="submitComplaintBtn" type="submit" >
                 Submit
+              </button>
+              <button id="closeModalBtn" type="" disabled>
+                Cancel
               </button>
             </form>
           </div>
@@ -68,6 +71,26 @@
       </div>
 
       <div id="main">
+
+        <!-- COMPLAINT TABLE -->
+        <div class="tempPadding">
+          <h3>Complaints</h3>
+          <div id="complaintTable">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Priority</th>
+                  <th scope="col">Meeting</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody id="complaintTableBody"></tbody>
+            </table>
+          </div>
+        </div>
 
         <!-- MEETING TABLE -->
         <div class="tempPadding">
@@ -99,25 +122,7 @@
           </div>
 
 
-          <!-- COMPLAINT TABLE -->
-          <div class="tempPadding">
-            <h3>Complaints</h3>
-            <div id="complaintTable">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Priority</th>
-                    <th scope="col">Meeting</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody id="complaintTableBody"></tbody>
-              </table>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -157,4 +162,5 @@
 </body>
 <script src="renderComplaintsTable.js"></script>
 <script src="renderMeetingsTable.js"></script>
+<script src="createNewComplaint.js"></script>
 </html>
