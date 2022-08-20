@@ -139,7 +139,7 @@
                   <!-- Date/time -->
 
                   <label for="dateTime">Date/Time</label>
-                  <input type="date-time" name="Date/Time">
+                  <input id="dateFieldInput" type="date-time" name="Date/Time">
 
        
 
@@ -147,7 +147,7 @@
                   
                 <div class="input-group mb-3">
                   <span class="input-group-text">Location</span>
-                  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                  <input id="locationFieldInput" type="text" class="form-control" aria-label="Text input with dropdown button">
                   <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="#">Usual Meeting Spot here</a></li>
@@ -161,10 +161,10 @@
                 <!-- Summary -->
                 <div class="input-group">
                   <span class="input-group-text">Meeting Topics</span>
-                  <textarea class="form-control" aria-label="With textarea"></textarea>
+                  <textarea id="summaryFieldInput" class="form-control" aria-label="With textarea"></textarea>
                 </div>
               </fieldset>
-              <button id="" type="submit">Submit</button>
+              <button id="submitMeetingBtn" type="submit">Submit</button>
               <button class="closeModalBtn"disabled>
                 Cancel
               </button>

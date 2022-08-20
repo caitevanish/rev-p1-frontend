@@ -7,11 +7,11 @@
 const openMeetingModal = document.getElementById('');
 
 //-----Meeting variables-----
-const timeInput = document.getElementById('');
-const locationInput = document.getElementById('');
-const summaryInput = document.getElementById('');
+const timeInput = document.getElementById('dateFieldInput');
+const locationInput = document.getElementById('locationFieldInput');
+const summaryInput = document.getElementById('summaryFieldInput');
 
-const submitMeetingBtn = document.getElementById('');
+const submitMeetingBtn = document.getElementById('submitMeetingBtn');
 
 //=========================
 //-----ASYNC FUNCTIONS-----
@@ -23,6 +23,8 @@ const submitMeetingBtn = document.getElementById('');
 //-----Location-----
 
 //-----Summary-----
+
+
 
 //-----Submit Event-----
 document.addEventListener('submit', async (event) => {
