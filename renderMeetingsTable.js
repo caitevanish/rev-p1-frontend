@@ -23,6 +23,9 @@ async function renderMeetingTable() {
     const meetingIdData = document.createElement('th');
     meetingIdData.innerText = meeting.meet_id;
 
+    const meetingDateData = document.createElement('td');
+    meetingDateData.innerText = meeting.time;
+
     const meetingTimeData = document.createElement('td');
     meetingTimeData.innerText = meeting.time;
 
@@ -33,6 +36,7 @@ async function renderMeetingTable() {
     meetingSummaryData.innerText = meeting.summary;
 
     meetingRow.appendChild(meetingIdData);
+    meetingRow.appendChild(meetingDateData);
     meetingRow.appendChild(meetingTimeData);
     meetingRow.appendChild(meetingLocationData);
     meetingRow.appendChild(meetingSummaryData);

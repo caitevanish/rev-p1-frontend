@@ -21,10 +21,13 @@ const submitMeetingBtn = document.getElementById('submitMeetingBtn');
 //convert input to epoch time
 
 //-----Location-----
+//User can type in a new location, or...
+//when the user clicks the dropdown, they select one of the three usual spots and on click will populate the value of input field with that saved location.
+
+
+
 
 //-----Summary-----
-
-
 
 //-----Submit Event-----
 document.addEventListener('submit', async (event) => {
