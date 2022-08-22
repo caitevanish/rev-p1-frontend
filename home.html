@@ -11,14 +11,22 @@
     <!-- All CSS Links -->
     <!-- Bootstrap CSS -->
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
     />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
+    <!-- For Date/time picker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- End Date Picker -->
+    
     <!-- My CSS -->
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -137,11 +145,18 @@
                   <legend>Create a Meeting</legend>
                   
                   <!-- Date/time -->
-
-                  <label for="dateTime">Date/Time</label>
-                  <input id="dateFieldInput" type="date-time" name="Date/Time">
-
-       
+    
+                <div class="input-group mb-3">
+                          <div class="input-group date">
+                            <span class="input-group-append" >
+                            <span class="input-group-text">
+                            <i class="fa fa-calendar"></i></span>
+                            
+                              <input id="datepicker" class="form-control bg-white">
+                            
+                              </span>
+                          </div>
+                      </div>
 
                 <!-- Location -->
                   
@@ -207,6 +222,21 @@
       const complaintBtn = document.getElementById('complaintBtn'); //opens complaint modal
     </script>
 
+
+
+<script>
+
+  flatpickr("#datepicker", {
+      enableTime: true,
+      minTime: "16:00",
+      maxTime: "20:00",
+      minDate: "today",
+      maxDate: new Date().fp_incr(31),
+      altInput: true,
+      altInput: true,
+      dateFormat: "Y-m-d H:i",
+  });
+  </script>
 
 
 </body>
