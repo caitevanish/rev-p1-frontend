@@ -18,14 +18,32 @@ const submitMeetingBtn = document.getElementById('submitMeetingBtn');
 //=========================
 
 //-----Date/Time-----
-//convert input to epoch time
+
+flatpickr('#datepicker', {
+  enableTime: true,
+  minTime: '16:00',
+  maxTime: '20:00',
+  minDate: 'today',
+  maxDate: new Date().fp_incr(31),
+  altInput: true,
+  altInput: true,
+  dateFormat: 'Y-m-d H:i',
+});
 
 //-----Location-----
 //User can type in a new location, or...
 //when the user clicks the dropdown, they select one of the three usual spots and on click will populate the value of input field with that saved location.
 
+const options = document.querySelectorAll('.dropdown-item');
 
-
+options.forEach((option) => {
+  option.addEventListener('click', () => {
+    const str = option.value;
+    console.log(option);
+    document.getElementById('locationFieldInput').value = str;
+    // console.log(document.getElementById('locationFieldInput').value);
+  });
+});
 
 //-----Summary-----
 

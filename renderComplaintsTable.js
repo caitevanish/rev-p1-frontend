@@ -5,7 +5,7 @@ const complaintTableBody = document.getElementById('complaintTableBody');
 async function getAllComplaints() {
   const httpResponse = await fetch('http://localhost:8080/complaints');
   const complaints = await httpResponse.json();
-  console.log(complaints);
+  // console.log(complaints);
   return complaints;
 }
 

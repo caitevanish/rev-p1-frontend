@@ -169,23 +169,41 @@
                   
                 <div class="input-group mb-3">
                   <span class="input-group-text">Location</span>
-                  <input id="locationFieldInput" type="text" class="form-control" aria-label="Text input with dropdown button">
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-                  <ul class="dropdown-menu dropdown-menu-end">
+
+                  <!-- input -->
+                  <!-- <input id="locationFieldInput" type="text" class="form-control" aria-label="Text input with dropdown button"> -->
+                  <input id="locationFieldInput" type="text" class="form-control" aria-label="Text input with dropdown button" required="required">
+
+                  <!-- drop down button -->
+                  <button  class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >Dropdown</button>
+
+                  <!-- drop down list -->
+
+                  <!-- <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" id="savedLocation1">The Silent Banshee</a></li>
                     <li><a class="dropdown-item" id="savedLocation2">The Poisoned Pen</a></li>
                     <li><a class="dropdown-item" id="savedLocation3">Sleepy Hollow Civic Center</a></li>
-                    <!-- <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+              
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Location TBD</a></li>
+                    <li><a class="dropdown-item">Location TBD</a></li>
+                  </ul> -->
+                  <ul id="selection" class="dropdown-menu dropdown-menu-end" onclick="selectedLocation();">
+                    <li><a value="The Silent Banshee" name="sb" class="dropdown-item">The Silent Banshee</a></li>
+
+                    <li><a value="The Poisoned Pen" class="dropdown-item">The Poisoned Pen</a></li>
+                    
+                    <li><a value="Sleepy Hollow Civic Center" class="dropdown-item" >Sleepy Hollow Civic Center</a></li>
+              
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a value="Location TBD" class="dropdown-item">Location TBD</a></li>
                   </ul>
+
                 </div>
                   
                 <!-- Summary -->
                 <div class="input-group">
                   <span class="input-group-text">Meeting Topics</span>
-                  <textarea id="summaryFieldInput" class="form-control" aria-label="With textarea"></textarea>
+                  <textarea id="summaryFieldInput" class="form-control" aria-label="With textarea" required="required"></textarea>
                 </div>
               </fieldset>
               <button id="submitMeetingBtn" type="submit">Submit</button>
@@ -232,16 +250,7 @@
 
 <script>
 
-  flatpickr("#datepicker", {
-      enableTime: true,
-      minTime: "16:00",
-      maxTime: "20:00",
-      minDate: "today",
-      maxDate: new Date().fp_incr(31),
-      altInput: true,
-      altInput: true,
-      dateFormat: "Y-m-d H:i",
-  });
+  
   </script>
 
 </main>

@@ -8,7 +8,7 @@ const meetingDetailsBtn = document.getElementById('meetingDetailsBtn'); //Get me
 async function getAllMeetings() {
   const httpResponse = await fetch('http://localhost:8080/meetings'); //url for the meetings table here
   const meetings = await httpResponse.json();
-  console.log(meetings);
+  // console.log(meetings);
   return meetings;
 }
 
