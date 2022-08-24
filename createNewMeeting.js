@@ -9,7 +9,7 @@ const openMeetingModal = document.getElementById('');
 //-----Meeting variables-----
 const timeInput = document.getElementById('dateFieldInput');
 const locationInput = document.getElementById('locationFieldInput');
-const summaryInput = document.getElementById('summaryFieldInput');
+const summaryInput = document.getElementById('meetingInput');
 
 const submitMeetingBtn = document.getElementById('submitMeetingBtn');
 
@@ -38,7 +38,7 @@ const options = document.querySelectorAll('.dropdown-item');
 
 options.forEach((option) => {
   option.addEventListener('click', () => {
-    const str = option.value;
+    const str = option.getAttribute('value');
     console.log(option);
     document.getElementById('locationFieldInput').value = str;
     // console.log(document.getElementById('locationFieldInput').value);

@@ -72,6 +72,7 @@
                       placeholder="So this thing happened recently..."
                       cols="50"
                       rows="5"
+                      required="required"
                     ></textarea>
                   </fieldset>
                   <button id="submitComplaintBtn" type="submit" name="submit_complaint" value="complaint" >
@@ -179,15 +180,7 @@
 
                   <!-- drop down list -->
 
-                  <!-- <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" id="savedLocation1">The Silent Banshee</a></li>
-                    <li><a class="dropdown-item" id="savedLocation2">The Poisoned Pen</a></li>
-                    <li><a class="dropdown-item" id="savedLocation3">Sleepy Hollow Civic Center</a></li>
-              
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item">Location TBD</a></li>
-                  </ul> -->
-                  <ul id="selection" class="dropdown-menu dropdown-menu-end" onclick="selectedLocation();">
+                  <ul id="selection" class="dropdown-menu dropdown-menu-end" ;">
                     <li><a value="The Silent Banshee" name="sb" class="dropdown-item">The Silent Banshee</a></li>
 
                     <li><a value="The Poisoned Pen" class="dropdown-item">The Poisoned Pen</a></li>
@@ -203,7 +196,10 @@
                 <!-- Summary -->
                 <div class="input-group">
                   <span class="input-group-text">Meeting Topics</span>
-                  <textarea id="summaryFieldInput" class="form-control" aria-label="With textarea" required="required"></textarea>
+                  <textarea name="meetingText" id="meetingInput" 
+                  placeholder="On the docket this week..."
+                  class="form-control" 
+                  aria-label="With textarea" required="required"></textarea>
                 </div>
               </fieldset>
               <button id="submitMeetingBtn" type="submit">Submit</button>
