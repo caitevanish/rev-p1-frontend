@@ -2,12 +2,12 @@ const complaintTableBody = document.getElementById('complaintTableBody');
 
 //-----Fetch Data-----
 
-async function getAllComplaints() {
-  const httpResponse = await fetch('http://localhost:8080/complaints');
-  const complaints = await httpResponse.json();
-  // console.log(complaints);
-  return complaints;
-}
+// async function getAllComplaints() {
+//   const httpResponse = await fetch('http://localhost:8080/complaints');
+//   const complaints = await httpResponse.json();
+//   // console.log(complaints);
+//   return complaints;
+// }
 
 //-----Render Table-----
 

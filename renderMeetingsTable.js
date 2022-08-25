@@ -5,12 +5,12 @@ const meetingDetailsBtn = document.getElementById('meetingDetailsBtn'); //Get me
 
 //-----Fetch Data-----
 
-async function getAllMeetings() {
-  const httpResponse = await fetch('http://localhost:8080/meetings'); //url for the meetings table here
-  const meetings = await httpResponse.json();
-  // console.log(meetings);
-  return meetings;
-}
+// async function getAllMeetings() {
+//   const httpResponse = await fetch('http://localhost:8080/meetings'); //url for the meetings table here
+//   const meetings = await httpResponse.json();
+//   // console.log(meetings);
+//   return meetings;
+// }
 
 //-----Render Table-----
 
