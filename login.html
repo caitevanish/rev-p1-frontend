@@ -14,13 +14,104 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+  <!-- My CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  
   </head>
   <body>
-    <nav>Home</nav>
-    <div id="welcomeBanner">
-      <h1>Hello {First name here}!</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Townhall</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/home.html"
+                >Home</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container tempBorder ">
+      <form>
+        <div class="mb-3">
+          <fieldset>
+            <h2 class="login">Login</h2>
+            <label for="usernameInput" class="form-label">Username</label>
+            <input
+              id="usernameInput"
+              type="text"
+              placeholder="username"
+              class="form-control"
+              />
+            </div>
+            <div class="mb-3 ">
+              <label for="passwordInput" class="form-label">Password</label>
+              <input
+                id="passwordInput"
+                type="password"
+                placeholder="password"
+                class="form-control"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="" class="btn btn-primary" disabled>Sign Up</button>
+          </fieldset>
+      </form>
     </div>
-    <div id="main"></div>
+
+    <script>
+      const usernameInput = document.getElementById('usernameInput');
+      const passwordInput = document.getElementById('passwordInput');
+
+      document.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const username = usernameInput.value;
+        const password = passwordInput.value;
+        const credentials = { username, password };
+
+        const httpResponse = await fetch('http://localhost:8080/login', {
+          method: 'POST',
+          body: JSON.stringify(credentials),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (httpResponse.status === 200) {
+          const user = await httpResponse.json();
+          // alert('login successful');
+          window.location = 'http://127.0.0.1:5500/home.html';
+          localStorage.setItem('user', JSON.stringify(user));
+          console.log(user);
+          localStorage.getItem('user');
+          username.password = null;
+          localStorage.clear();
+        }
+
+        if (httpResponse.status === 404) {
+          alert('username not found');
+        }
+
+        if (httpResponse.status === 400) {
+          alert('password does not match');
+        }
+      });
+    </script>
 
     <!-- -----------bootstrap Scripts Here----------- -->
     <script
