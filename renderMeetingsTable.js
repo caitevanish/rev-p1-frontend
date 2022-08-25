@@ -1,7 +1,7 @@
 // ----- Meetings Table Async Functions -----
 
-const meetingTableBody = document.getElementById('meetingTableBody'); //shows upcoming meetings
-const meetingDetailsBtn = document.getElementById('meetingDetailsBtn'); //Get meeting by id, open in a modal
+// const meetingTableBody = document.getElementById('meetingTableBody'); //shows upcoming meetings
+// const meetingDetailsBtn = document.getElementById('meetingDetailsBtn'); //Get meeting by id, open in a modal
 
 //-----Fetch Data-----
 
@@ -14,40 +14,40 @@ const meetingDetailsBtn = document.getElementById('meetingDetailsBtn'); //Get me
 
 //-----Render Table-----
 
-async function renderMeetingTable() {
-  const meetingList = await getAllMeetings();
+// async function renderMeetingTable() {
+//   const meetingList = await getAllMeetings();
 
-  for (const meeting of meetingList) {
-    const meetingRow = document.createElement('tr'); //making the row
+//   for (const meeting of meetingList) {
+//     const meetingRow = document.createElement('tr'); //making the row
 
-    const meetingIdData = document.createElement('th');
-    meetingIdData.innerText = meeting.meet_id;
+//     const meetingIdData = document.createElement('th');
+//     meetingIdData.innerText = meeting.meet_id;
 
-    const meetingDateData = document.createElement('td');
-    meetingDateData.innerText = meeting.time;
+//     const meetingDateData = document.createElement('td');
+//     meetingDateData.innerText = meeting.time;
 
-    const meetingTimeData = document.createElement('td');
-    meetingTimeData.innerText = meeting.time;
+//     const meetingTimeData = document.createElement('td');
+//     meetingTimeData.innerText = meeting.time;
 
-    const meetingLocationData = document.createElement('td');
-    meetingLocationData.innerText = meeting.location;
+//     const meetingLocationData = document.createElement('td');
+//     meetingLocationData.innerText = meeting.location;
 
-    const meetingSummaryData = document.createElement('td');
-    meetingSummaryData.innerText = meeting.summary;
+//     const meetingSummaryData = document.createElement('td');
+//     meetingSummaryData.innerText = meeting.summary;
 
-    meetingRow.appendChild(meetingIdData);
-    meetingRow.appendChild(meetingDateData);
-    meetingRow.appendChild(meetingTimeData);
-    meetingRow.appendChild(meetingLocationData);
-    meetingRow.appendChild(meetingSummaryData);
-    meetingTableBody.appendChild(meetingRow);
-  }
-}
-renderMeetingTable();
+//     meetingRow.appendChild(meetingIdData);
+//     meetingRow.appendChild(meetingDateData);
+//     meetingRow.appendChild(meetingTimeData);
+//     meetingRow.appendChild(meetingLocationData);
+//     meetingRow.appendChild(meetingSummaryData);
+//     meetingTableBody.appendChild(meetingRow);
+//   }
+// }
+// renderMeetingTable();
 
-//-----Clear Table-----
+// //-----Clear Table-----
 
-async function clearMeetingTable() {
-  const clearTableBody = document.getElementById('complaintTableBody');
-  clearTableBody.innerHTML = '';
-}
+// async function clearMeetingTable() {
+//   const clearTableBody = document.getElementById('complaintTableBody');
+//   clearTableBody.innerHTML = '';
+// }

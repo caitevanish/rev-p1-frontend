@@ -53,7 +53,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h1>Hello ${localStorage.user.username}!</h1>
+            <h1>Hello ${username}!</h1>
           </div>
         
         <!-- COMPLAINT FORM -->
@@ -87,12 +87,14 @@
         </div>
       </div>
 
-      <!-- Dashboard here -->
+      <!-- ---------------------------------- -->
+      <!-- ----------Dashboard here---------- -->
+      <!-- ---------------------------------- -->
     </section>
     <div id="display-constit">
-    <div id="display-">
-
+    <div id="display-member">
     </div>
+
 
 
     <section>
@@ -100,7 +102,7 @@
     </section>
 
         <!-- COMPLAINT TABLE -->
-        <div class="tempPadding">
+        <!-- <div class="tempPadding">
           <h3>Complaints</h3>
           <div id="complaintTable">
             <table class="table">
@@ -117,7 +119,7 @@
               <tbody id="complaintTableBody"></tbody>
             </table>
           </div>
-        </div>
+        </div> -->
 
         <!-- MEETING TABLE -->
         <!-- <div class="tempPadding">
@@ -235,30 +237,13 @@
 
     <!-- -----------My Scripts Linked----------- -->
 
-  <!-- Main Page script -->
-    <script>
-      
-    async function getAllMeetings() {
-    const httpResponse = await fetch('http://localhost:8080/meetings');
-    const meetings = await httpResponse.json();
-    return meetings;
-    }
-    
+    <!-- Main Page script -->
 
 
-    async function getAllComplaints() {
-    const httpResponse = await fetch('http://localhost:8080/complaints');
-    const complaints = await httpResponse.json();
-    // console.log(complaints);
-    return complaints;
-    }
-    </script>
 
-  <script src="displayConstitDashboard.js"></script>
-  
-  
-  
-  <script>  
+<script src="displayConstitDashboard.js"></script>
+
+<script>  
     // -----Main variables-----
     const user = localStorage.getItem('user')
     const parseUser = JSON.parse(user);
@@ -269,29 +254,35 @@
     const welcomeBanner = document.getElementById('welcomeBanner'); //Says user's name
     const complaintBtn = document.getElementById('complaintBtn'); //opens complaint modal
     
-    const constituentDisplay = document.getElementById('#display-constit')
-    const memberDisplay = document.getElementById('#display-member')
-
-
+    const constituentDisplay = document.getElementById('display-constit')
     
+    const memberDisplay = document.getElementById('display-member')
 
+    console.log(constituentDisplay);
+    
+    
     console.log(userFname);
 
     if(accountType == "CONSTITUENT"){  
-      console.log( "Hi constituent")
-      displayConsDashboard();
+      console.log( "step 1: Hi constituent")
+      renderConstitMeetingTable();  //in displayConstitDashboard.js
 
+     } else if( accountType == "MEMBER"){
+      console.log( "step 1: Hi Council Member")
+      renderConstitMeetingTable();
+      renderMembersComplaintTable();
      }
+
     //checking for AcctType, redirect to render
     document.addEventListener('onload', async (event) => {
       event.preventDefault();
      
-      });
-
-
+    });
     
-  
-  </script>
+    
+    
+    
+    </script>
 
 
 </main>
