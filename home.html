@@ -61,8 +61,11 @@
           <div id="complaintBox">
             <h2>Report a complaint</h2>
             <p>Is there something on your mind?</p>
-            <button id="openComplaintModal">Tell us about it</button>
-              <div class="modal-body tempPadding tempBorder">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Tell us about it
+              </button>
+            
+              <!-- <div class="modal-body tempPadding tempBorder">
                 <form action="" method="post">
                   <fieldset>
                     <legend>Write your complaint here:</legend>
@@ -82,66 +85,63 @@
                     Cancel
                   </button>
                 </form>
-              </div>
+              </div> -->
           </div>
         </div>
       </div>
     </section>
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" tabindex="-1" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true" data-bs-whatever="@fat">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title-center" id="exampleModalLabel">Submit a complaint</h5>   
+      </div>
+      
+      <!-- Complaint Form -->
+      <div class="modal-body">
+        <form action="" method="post">
+          <div class="mb-3">
+            <textarea class="form-control" id="complaintInput" placeholder="So this thing happened recently..." required="required"></textarea>
+          </div>
+        </form>
+      </div>
+          <!-- Complaint Form END-->
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+        <button id="submitComplaintBtn" class="btn btn-primary" type="submit" name="submit_complaint" value="complaint" data-bs-dismiss="modal" >
+          Submit
+        </button>  
+
+        <!-- <button id="submitComplaintBtn" type="submit" class="btn btn-primary" name="submit_complaint" value="complaint">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
       <!-- ---------------------------------- -->
       <!-- ----------Dashboard here---------- -->
       <!-- ---------------------------------- -->
       <section>
-        
-        <div id="display-constit">
-        <div id="display-member">
+        <!-- <div class="container"> -->
+          <div class="row">
+            <div class="col">
+              1 of 2
+              <div id="display-constit"></div>
+            </div>
+            <div class="col">
+              2 of 2
+              <div id="display-member">
+            </div>
+          </div>
       </section>
-    
-    
-    
-    
-
-        <!-- COMPLAINT TABLE -->
-        <!-- <div class="tempPadding">
-          <h3>Complaints</h3>
-          <div id="complaintTable">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Description</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Priority</th>
-                  <th scope="col">Meeting</th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody id="complaintTableBody"></tbody>
-            </table>
-          </div>
-        </div> -->
-
-        <!-- MEETING TABLE -->
-        <!-- <div class="tempPadding">
-          <h3>Upcoming Meetings</h3>
-          <div id="meetingTable">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Time</th>
-                  <th scope="col">Location</th>
-                  <th scope="col">Summary</th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody id="meetingTableBody">
-              </tbody>
-            </table>
-          </div>
-        </div> -->
-
+         
         <!-- New Meeting Form -->
         <div class="container tempBorder tempPadding">
           <div id="meetingBox">

@@ -12,6 +12,7 @@ body {
 .tempPadding {
   padding-top: 25px;
   padding-bottom: 50px;
+  padding-left: 10px;
 }
 
 .login {
