@@ -35,12 +35,14 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Townhall</a>
+        <a class="navbar-brand" href="/home.html">Townhall</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/helper-create-meeting.html">Create Meeting</a>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/login.html">Sign Out</a>
             </li>
@@ -143,45 +145,48 @@
       </section>
          
         <!-- New Meeting Form -->
-        <div class="container tempBorder tempPadding">
+
+        <!-- <div class="container tempBorder tempPadding">
           <div id="meetingBox">
             <h2>Schedule a New Meeting</h2>
-            <button id="openNewMeetingModal">Create Meeting</button>
-          </div>
+          
+          
           <div>
             <div class="">
               <form action="" method="post">
                 <fieldset>
-                  <legend>Create a Meeting</legend>
+                  <legend>Create a Meeting</legend> -->
                   
                   <!-- Date/time -->
     
-                <div class="input-group mb-3">
+                <!-- <div class="input-group mb-3">
                           <div class="input-group date">
                             <span class="input-group-append" >
                             <span class="input-group-text">
                             <i class="fa fa-calendar"></i></span>
                             
-                              <input id="datepicker" class="form-control bg-white">
+                              <input id="datepicker" class="form-control bg-white dateFieldInput">
                             
                               </span>
                           </div>
-                      </div>
+                      </div> -->
 
                 <!-- Location -->
                   
-                <div class="input-group mb-3">
-                  <span class="input-group-text">Location</span>
+                <!-- <div class="input-group mb-3">
+                  <span class="input-group-text">Location</span> -->
 
                   <!-- input -->
-                  <input id="locationFieldInput" type="text" class="form-control" aria-label="Text input with dropdown button" required="required">
+
+                  <!-- <input id="locationFieldInput" type="text" class="form-control" aria-label="Text input with dropdown button" required="required"> -->
 
                   <!-- drop down button -->
-                  <button  class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >Dropdown</button>
+
+                  <!-- <button  class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >Dropdown</button> -->
 
                   <!-- drop down list -->
 
-                  <ul id="selection" class="dropdown-menu dropdown-menu-end" ;">
+                  <!-- <ul id="selection" class="dropdown-menu dropdown-menu-end" ;">
                     <li><a value="The Silent Banshee" name="sb" class="dropdown-item">The Silent Banshee</a></li>
 
                     <li><a value="The Poisoned Pen" class="dropdown-item">The Poisoned Pen</a></li>
@@ -192,10 +197,10 @@
                     <li><a value="Location TBD" class="dropdown-item">Location TBD</a></li>
                   </ul>
 
-                </div>
+                </div> -->
                   
                 <!-- Summary -->
-                <div class="input-group">
+                <!-- <div class="input-group">
                   <span class="input-group-text">Meeting Topics</span>
                   <textarea name="meetingText" id="meetingInput" 
                   placeholder="On the docket this week..."
@@ -211,8 +216,9 @@
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </div> -->
   
       
     
@@ -239,10 +245,10 @@
     
     <!-- -----------My Scripts Linked----------- -->
 
+    <script src="renderMeetingsTable.js"></script>
+    <script src="createNewComplaint.js"></script>
+    <!-- <script src="createNewMeeting.js"></script> -->
 <script src="renderComplaintsTable.js"></script> 
-<script src="renderMeetingsTable.js"></script>
-<script src="createNewComplaint.js"></script>
-<script src="createNewMeeting.js"></script>
 
 <!-- <script src="acctTypeDashboards.js"></script> -->
 
@@ -279,10 +285,10 @@
      }
 
     //checking for AcctType, redirect to render
-    document.addEventListener('onload', async (event) => {
-      event.preventDefault();
+    // document.addEventListener('onload', async (event) => {
+    //   event.preventDefault();
      
-    });
+    // });
     
     
 
