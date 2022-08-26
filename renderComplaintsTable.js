@@ -65,17 +65,18 @@ async function renderComplaintsTable() {
     compRow.appendChild(compMeetingData);
 
     //Update Complaint button
-    const compUpdateData = document.createElement('td'); //create table data placeholder
-    // const updateBtn = document.createElement('button'); //create button element
-    // updateBtn.innerText = 'Update';
-    compUpdateData.innerHTML = `
+    const compUpdateBtn = document.createElement('td'); //create table data placeholder
+
+    compUpdateBtn.innerHTML = `
     <button type="button" class="btn btn-info btn-sm">Update</button>
     `;
-    
+    compUpdateBtn.addEventListener('click', async (event) => {
+      event.preventDefault();
+      console.log('in the button');
+      //open up a modal with the form and input in it...
+    });
 
-    
-    compRow.appendChild(compUpdateData);
-    // compRow.appendChild(updateBtn);
+    compRow.appendChild(compUpdateBtn);
 
     complaintTableBody.appendChild(compRow);
   }
