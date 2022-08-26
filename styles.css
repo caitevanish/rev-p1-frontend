@@ -47,8 +47,14 @@ h3 {
   position: relative;
 }
 
-#complaintBox,
-#meetingBox {
+#complaintBox {
+  background-color: coral;
+  padding: 1rem;
+  align-items: center;
+}
+
+.outerComplaintBox,
+.outerMeetingBox {
   /* background-color: coral; */
   padding: 1rem;
   align-items: center;
