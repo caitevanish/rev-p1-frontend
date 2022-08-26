@@ -7,6 +7,7 @@
 async function getAllMeetings() {
   const httpResponse = await fetch('http://localhost:8080/meetings');
   const meetings = await httpResponse.json();
+  console.log(meetings);
   return meetings;
 }
 
@@ -45,7 +46,7 @@ const renderMeetingDisplay = function () {
                   <span class="input-group-text">
                   <i class="fa fa-calendar"></i></span>
                   
-                    <input id="datepicker" class="form-control bg-white">
+                    <input id="datepicker" class="form-control bg-white dateFieldInput">
                   
                     </span>
                 </div>
@@ -136,10 +137,11 @@ async function renderMeetingTable() {
     const meetingRow = document.createElement('tr');
 
     const meetingIdData = document.createElement('th');
-    meetingIdData.innerText = meeting.meetid;
+    meetingIdData.innerText = meeting.meetId;
 
     const meetingDateData = document.createElement('td');
-    meetingDateData.innerText = meeting.time;
+    // meetingDateData.innerText = meeting.time;
+    meetingDateData.innerText = new Date(meeting.time * 1000);
 
     const meetingTimeData = document.createElement('td');
     meetingTimeData.innerText = meeting.time;
