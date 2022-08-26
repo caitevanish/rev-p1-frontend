@@ -11,7 +11,7 @@ async function getAllComplaints() {
 //-----Render Table-----
 
 const renderComplaintDisplay = function () {
-  console.log('step 2: display complaint table');
+  // console.log('step 2: display complaint table');
   const html = `
 <div class="tempPadding">
 <h3>Complaints</h3>
@@ -63,6 +63,19 @@ async function renderComplaintsTable() {
     compRow.appendChild(compStatusData);
     compRow.appendChild(compPriorityData);
     compRow.appendChild(compMeetingData);
+
+    //Update Complaint button
+    const compUpdateData = document.createElement('td'); //create table data placeholder
+    // const updateBtn = document.createElement('button'); //create button element
+    // updateBtn.innerText = 'Update';
+    compUpdateData.innerHTML = `
+    <button type="button" class="btn btn-info btn-sm">Update</button>
+    `;
+    
+
+    
+    compRow.appendChild(compUpdateData);
+    // compRow.appendChild(updateBtn);
 
     complaintTableBody.appendChild(compRow);
   }

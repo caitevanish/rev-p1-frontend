@@ -13,7 +13,7 @@ async function getAllMeetings() {
 // -----Render Table-----
 
 const renderMeetingDisplay = function () {
-  console.log('step 2: display const dash');
+  // console.log('step 2: display const dash');
   const html = `
   <div class="tempPadding">
   <h3>Upcoming Meetings</h3>
@@ -36,9 +36,9 @@ const renderMeetingDisplay = function () {
   </div>
 </div>
     `;
-  console.log('step 3: pre-insertAdjacentHtml');
+  // console.log('step 3: pre-insertAdjacentHtml');
   constituentDisplay.insertAdjacentHTML('beforeend', html);
-  console.log('step 4: post-insertAdjacentHtml');
+  // console.log('step 4: post-insertAdjacentHtml');
 };
 
 async function renderMeetingTable() {
