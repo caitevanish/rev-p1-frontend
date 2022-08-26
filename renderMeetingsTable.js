@@ -1,53 +1,83 @@
 // ----- Meetings Table Async Functions -----
 
-// const meetingTableBody = document.getElementById('meetingTableBody'); //shows upcoming meetings
 // const meetingDetailsBtn = document.getElementById('meetingDetailsBtn'); //Get meeting by id, open in a modal
 
 //-----Fetch Data-----
 
-// async function getAllMeetings() {
-//   const httpResponse = await fetch('http://localhost:8080/meetings'); //url for the meetings table here
-//   const meetings = await httpResponse.json();
-//   // console.log(meetings);
-//   return meetings;
-// }
+async function getAllMeetings() {
+  const httpResponse = await fetch('http://localhost:8080/meetings');
+  const meetings = await httpResponse.json();
+  return meetings;
+}
 
-//-----Render Table-----
+// -----Render Table-----
 
-// async function renderMeetingTable() {
-//   const meetingList = await getAllMeetings();
+const renderMeetingDisplay = function () {
+  console.log('step 2: display const dash');
+  const html = `
+  <div class="tempPadding">
+  <h3>Upcoming Meetings</h3>
+  <div id="meetingTable">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
+          <th scope="col">Location</th>
+          <th scope="col">Summary</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody id="meetingTableBody">
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+    `;
+  console.log('step 3: pre-insertAdjacentHtml');
+  constituentDisplay.insertAdjacentHTML('beforeend', html);
+  console.log('step 4: post-insertAdjacentHtml');
+};
 
-//   for (const meeting of meetingList) {
-//     const meetingRow = document.createElement('tr'); //making the row
+async function renderMeetingTable() {
+  const meetingList = await getAllMeetings();
 
-//     const meetingIdData = document.createElement('th');
-//     meetingIdData.innerText = meeting.meet_id;
+  const meetingTableBody = document.getElementById('meetingTableBody');
 
-//     const meetingDateData = document.createElement('td');
-//     meetingDateData.innerText = meeting.time;
+  for (const meeting of meetingList) {
+    const meetingRow = document.createElement('tr');
 
-//     const meetingTimeData = document.createElement('td');
-//     meetingTimeData.innerText = meeting.time;
+    const meetingIdData = document.createElement('th');
+    meetingIdData.innerText = meeting.meetid;
 
-//     const meetingLocationData = document.createElement('td');
-//     meetingLocationData.innerText = meeting.location;
+    const meetingDateData = document.createElement('td');
+    meetingDateData.innerText = meeting.time;
 
-//     const meetingSummaryData = document.createElement('td');
-//     meetingSummaryData.innerText = meeting.summary;
+    const meetingTimeData = document.createElement('td');
+    meetingTimeData.innerText = meeting.time;
 
-//     meetingRow.appendChild(meetingIdData);
-//     meetingRow.appendChild(meetingDateData);
-//     meetingRow.appendChild(meetingTimeData);
-//     meetingRow.appendChild(meetingLocationData);
-//     meetingRow.appendChild(meetingSummaryData);
-//     meetingTableBody.appendChild(meetingRow);
-//   }
-// }
-// renderMeetingTable();
+    const meetingLocationData = document.createElement('td');
+    meetingLocationData.innerText = meeting.location;
 
-// //-----Clear Table-----
+    const meetingSummaryData = document.createElement('td');
+    meetingSummaryData.innerText = meeting.summary;
 
-// async function clearMeetingTable() {
-//   const clearTableBody = document.getElementById('complaintTableBody');
-//   clearTableBody.innerHTML = '';
-// }
+    meetingRow.appendChild(meetingIdData);
+    meetingRow.appendChild(meetingDateData);
+    meetingRow.appendChild(meetingTimeData);
+    meetingRow.appendChild(meetingLocationData);
+    meetingRow.appendChild(meetingSummaryData);
+    meetingTableBody.appendChild(meetingRow);
+  }
+}
+renderMeetingTable();
+
+//-----Clear Table-----
+
+async function clearMeetingTable() {
+  const clearTableBody = document.getElementById('meetingTableBody');
+  clearTableBody.innerHTML = '';
+  renderMeetingDisplay();
+}

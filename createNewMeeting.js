@@ -74,8 +74,8 @@ document.addEventListener('submit', async (event) => {
     timeInput.value = '';
     locationInput.value = '';
     summaryInput.value = '';
-    clearMeetingsTable();
-    renderMeetingsTable();
+    clearMeetingTable();
+    renderMeetingDisplay();
   } else {
     alert('Something went wrong.');
   }
