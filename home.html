@@ -53,12 +53,12 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h1>Hello ${username}!</h1>
+            <h1>Hello <span id="userFname"></span></h1>
           </div>
         
         <!-- COMPLAINT FORM -->
         <div class="col">
-          <div id="complaintBox">
+          <div id="complaintBox" class="">
             <h2>Report a complaint</h2>
             <p>Is there something on your mind?</p>
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -132,11 +132,11 @@
         <!-- <div class="container"> -->
           <div class="row">
             <div class="col">
-              1 of 2
+              
               <div id="display-constit"></div>
             </div>
             <div class="col">
-              2 of 2
+             
               <div id="display-member">
             </div>
           </div>
@@ -255,12 +255,15 @@
     const accountType = parseUser["acctType"]
     const userFname =parseUser["fName"]
 
+    const hello_username = `Hello ${userFname}`;
+
+
 
     const welcomeBanner = document.getElementById('welcomeBanner'); //Says user's name
     const complaintBtn = document.getElementById('complaintBtn'); //opens complaint modal
     
     const constituentDisplay = document.getElementById('display-constit')
-    
+  
     const memberDisplay = document.getElementById('display-member')
 
     
