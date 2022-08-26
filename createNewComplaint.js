@@ -16,7 +16,7 @@ const submitComplaintBtn = document.getElementById('submitComplaintBtn');
 //-----functions:
 //
 
-document.addEventListener('submit', async (event) => {
+submitComplaintBtn.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   // if (complaintTextInput.length >= 20) {

@@ -5,6 +5,7 @@
 async function getAllComplaints() {
   const httpResponse = await fetch('http://localhost:8080/complaints');
   const complaints = await httpResponse.json();
+  console.log(complaints);
   return complaints;
 }
 
@@ -44,7 +45,7 @@ async function renderComplaintsTable() {
     const compRow = document.createElement('tr');
 
     const compIdData = document.createElement('th');
-    compIdData.innerText = complaint.complaintid;
+    compIdData.innerText = complaint.complaintId;
 
     const compDescripData = document.createElement('td');
     compDescripData.innerText = complaint.description;
@@ -56,7 +57,7 @@ async function renderComplaintsTable() {
     compPriorityData.innerText = complaint.priority;
 
     const compMeetingData = document.createElement('td');
-    compMeetingData.innerText = complaint.m_id;
+    compMeetingData.innerText = complaint.mId;
 
     compRow.appendChild(compIdData);
     compRow.appendChild(compDescripData);
