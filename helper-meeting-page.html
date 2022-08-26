@@ -49,33 +49,28 @@
       </div>
     </nav>
 
-    <div class="container tempBorder tempPadding">
+    <div class="container  tempPadding">
+      <h2>Meeting Test Page</h2>
       <div id="meetingBox">
-        <h2>Schedule a New Meeting</h2>
-      
-      </div>
-      <div>
-        <div class="">
+      <div class="">
+        <div class="col-md-8 text-center tempBorder innerMeetingBox">
           <form action="" method="post">
             <fieldset>
               <legend>Create a Meeting</legend>
               
               <!-- Date/time -->
 
-            <div class="input-group mb-3">
-                      <div class="input-group date">
-                        <span class="input-group-append" >
-                        <span class="input-group-text">
-                        <i class="fa fa-calendar"></i></span>
-                        
-                          <input id="datepicker" class="form-control bg-white dateFieldInput">
-                          <!-- <input id="dateFieldInput" type="datetime-local" /> -->
-
-
-                        
-                          </span>
-                      </div>
-                  </div>
+            <div class="input-group mb-3 ">
+                <div class="input-group date ">
+                  <span class="input-group-append" >
+                  <span class="input-group-text">
+                  <i class="fa fa-calendar "></i></span>
+                  
+                    <input id="datepicker" class=" form-control bg-white dateFieldInput ">
+                    <!-- <input id="dateFieldInput" type="datetime-local" /> -->    
+                  </span>
+              </div>
+            </div>
 
             <!-- Location -->
               
@@ -111,7 +106,9 @@
               class="form-control" 
               aria-label="With textarea" required="required"></textarea>
             </div>
-          </fieldset>
+          </fieldset> 
+
+
           <button id="submitMeetingBtn" type="submit">Submit</button>
           <button class="closeModalBtn"disabled>
             Cancel
@@ -121,6 +118,7 @@
       </div>
     </div>
 
+    <!-- Bootstrap Scripts -->
     <script
     src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

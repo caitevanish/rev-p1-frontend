@@ -47,14 +47,28 @@ h3 {
   position: relative;
 }
 
-#complaintBox {
-  background-color: coral;
+#complaintBox,
+#meetingBox {
+  /* background-color: coral; */
   padding: 1rem;
   align-items: center;
 }
 
-#meetingBox {
+.innerComplaintBox,
+.innerMeetingBox {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  width: 640px;
+  height: auto;
+  margin: 0 auto;
+  padding: 2em;
+  position: relative;
+}
+
+/* #meetingBox {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
