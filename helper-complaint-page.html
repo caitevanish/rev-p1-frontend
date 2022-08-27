@@ -86,23 +86,76 @@
                 ></textarea>
               </fieldset>
 
-              <!-- <button
-              id="submitComplaintBtn"
-              type="submit"
-              name="submit_complaint"
-              value="complaint" 
-            >
-              Submit
-            </button> -->
-              <button id="submitComplaintBtn" type="click">Submit</button>
-
-              <button class="closeModalBtn" disabled>Cancel</button>
+              <button id="submitComplaintBtn" class="btn btn-primary" type="click">Submit</button>
             </form>
           </div>
         </div>
       </div>
     </div>
- 
+    <hr class="dotted">
+    <!-- Update Complaint -->
+    <div class="container tempBorder">
+      <div class="outerComplaintBox">
+        <h3>Update Complaint</h3>
+        <div class="col-md-8 text-center tempBorder innerComplaintBox">
+
+          <div class="mb-3">
+            <div>
+              <label for="complaintId" class="form-label">Choose Complaint Id:</label>
+              <input type="text" class="form-control" id="complaintIdInput" aria-describedby="complaintId">
+            </div>            
+              <button id="getcomplaintId" class="btn btn-primary" type="click">Get It</button>
+          </div>
+        </div>  
+
+
+        <div class="col-md-10 text-center tempBorder innerComplaintBox">
+
+          <form action="" method="put"> <div>
+            <legend>Complaint Details</legend>
+            <div class="input-group mb-3">
+              <span class="input-group-text">Id:</span>
+              <input id="dbId" type="text" class="form-control" aria-label="" disabled  value="">
+            </div>
+  
+            
+            <div class="input-group mb-3">
+              <span class="input-group-text">Description:</span>
+              <input id="dbDescription" type="text" class="form-control" aria-label="" disabled  value="">
+              
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text">Status:</span>
+              <input id="dbStatus" type="text" class="form-control" aria-label=""  placeholder="PENDING, APPROVED, DENIED" value="">
+            </div>
+              
+            <div class="input-group mb-3">
+              <span class="input-group-text">priority:</span>
+              <input id="dbPriority" type="text" class="form-control" aria-label="" placeholder="TBD, HIGH, LOW" value="">
+            </div>
+              
+            <div class="input-group mb-3">
+              <span class="input-group-text">Meeting Id:</span>
+              <input id="dbMeetingId" type="text" class="form-control" aria-label=""  value="">
+            </div>
+  
+              <button id="updateComplaintBtn" class="btn btn-primary" type="click">Submit</button>
+            
+            
+  
+  
+          </form>
+        </div>  
+          
+        </div>
+        </div>
+
+      </div>
+
+
+    </div>
+     
   <!-- Bootstrap Scripts -->
   <script
     src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -120,7 +173,6 @@
     crossorigin="anonymous"
   ></script>
   <script>
-
       //===========================
       //-----Submit a Claim:
       //===========================
@@ -128,8 +180,6 @@
       //-----Variables:
       const complaintTextInput = document.getElementById('complaintInput');
       const submitComplaintBtn = document.getElementById('submitComplaintBtn');
-
-
 
       //-----Submit complaint button:
       submitComplaintBtn.addEventListener('click', async (event) => {
@@ -172,6 +222,25 @@
   });
   </script>
 <script>
+  //===========================
+  //-----update Claim:
+  //===========================
+
+  //-----Variables:
+  const complaintIdInput = document.getElementById('complaintIdInput');
+  const getComplaintBtn = document.getElementById('getcomplaintId')
+
+  //-----Submit complaint button:
+  getComplaintBtn.addEventListener('click', (event)=>{
+    console.log("in the get meeting button");
+    const id = complaintIdInput.value;
+    console.log(id);
+
+    // const httpResonse = await fetch('http://localhost:8080/complaints/${id}/${}')
+
+  })
+
+
   //-----get complaints:
   
   
