@@ -223,7 +223,7 @@
   </script>
 <script>
   //===========================
-  //-----update Claim:
+  //-----Get Claim:
   //===========================
 
   //-----Variables:
@@ -238,7 +238,7 @@
 
   //-----get complaint button:
   getComplaintBtn.addEventListener('click', (event)=>{
-    console.log("in the get meeting button");
+    console.log("in the get complaint button");
     getComplaintDetails();
     
     async function getComplaintDetails(){
@@ -251,7 +251,7 @@
         }
       });
       const complaintIdDetails = await httpResponse.json();
-      console.log(complaintIdDetails);  //holding the promise
+      // console.log(complaintIdDetails);  //holding the promise
       const { complaintId, description, status, priority, mId} = complaintIdDetails
 
       dbId.value = complaintId;
@@ -260,8 +260,36 @@
       dbPriority.value = priority;
       dbMeetingId.value = mId;
 
+    }
 
-      console.log(complaintId);
+  });
+
+//===========================
+//-----Update Claim:
+//===========================
+
+
+const updateComplaintBtn = document.getElementById('updateComplaintBtn');
+
+
+  //-----update complaint button:
+updateComplaintBtn.addEventListener('click', (event)=>{
+  event.preventDefault();
+  console.log("clicked update complaint button");
+  const id = document.getElementById('dbId').value;
+  const status = document.getElementById('dbStatus').value;
+  const priority = document.getElementById('dbPriority').value; 
+  const meetingId = document.getElementById('dbMeetingId').value; 
+  updateStatus();
+  updatePriority();
+  updateMeetingId();
+  
+
+  async function updateStatus(){
+    console.log("in the update complaints detail async func");
+    console.log(status);
+    console.log(priority);
+    console.log(meetingId);
 
 
     }
