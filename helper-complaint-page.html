@@ -291,17 +291,47 @@ updateComplaintBtn.addEventListener('click', (event)=>{
     console.log(priority);
     console.log(meetingId);
 
+    // const newStatus = 
+    
+    const httpResponse = await fetch(`http://localhost:8080/complaints/${id}/${status}`, {
+      method: "PUT",
+      headers:{
+        "Content-Type":"application/json"
+      }
+    })
+    if(httpResponse.status != 204){
+      alert(`There was a problem: Status didn't update`);
+    }
+  };
 
+  async function updatePriority(){
+    const httpResponse = await fetch(`http://localhost:8080/complaints/${id}/${priority}`, {
+      method: "PUT",
+      headers:{
+        "Content-Type":"application/json"
+      }
+    })
+    if(httpResponse.status != 204){
+      alert(`There was a problem: Priority didn't update`);
     }
 
-  })
+  };
 
+  async function updateMeetingId(){
+    const httpResponse = await fetch(`http://localhost:8080/complaints/${id}/meeting/${meetingId}`, {
+      method: "PUT",
+      headers:{
+        "Content-Type":"application/json"
+      }
+    })
 
-
-  //-----get complaints:
-  
-  
-  //-----render complaint:
+    if(httpResponse.status != 204){
+      alert(`There was a problem: Meeting Id didn't update`);
+    }
+    // option 1: switch back to home page
+    window.location = './home.html';
+    } ;
+})
 
 
 </script>
