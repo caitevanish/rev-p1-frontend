@@ -127,7 +127,7 @@
   
             <div class="input-group mb-3">
               <span class="input-group-text">Status:</span>
-              <input id="dbStatus" type="text" class="form-control" aria-label=""  placeholder="PENDING, APPROVED, DENIED" value="">
+              <input id="dbStatus" type="text" class="form-control" aria-label=""  placeholder="PENDING, APPROVED, DENIED"  value="">
             </div>
               
             <div class="input-group mb-3">
@@ -228,17 +228,46 @@
 
   //-----Variables:
   const complaintIdInput = document.getElementById('complaintIdInput');
-  const getComplaintBtn = document.getElementById('getcomplaintId')
+  const getComplaintBtn = document.getElementById('getcomplaintId');
 
-  //-----Submit complaint button:
+  const dbId = document.getElementById('dbId');
+  const dbDescription = document.getElementById('dbDescription');
+  const dbStatus = document.getElementById('dbStatus');
+  const dbPriority = document.getElementById('dbPriority');
+  const dbMeetingId = document.getElementById('dbMeetingId');
+
+  //-----get complaint button:
   getComplaintBtn.addEventListener('click', (event)=>{
     console.log("in the get meeting button");
-    const id = complaintIdInput.value;
-    console.log(id);
+    getComplaintDetails();
+    
+    async function getComplaintDetails(){
+      const id = complaintIdInput.value;
+      console.log(id);
+      const httpResponse = await fetch(`http://localhost:8080/complaints/${id}`, {
+        method:"GET",
+        heaers:{
+          "Content-Type":"application/json"
+        }
+      });
+      const complaintIdDetails = await httpResponse.json();
+      console.log(complaintIdDetails);  //holding the promise
+      const { complaintId, description, status, priority, mId} = complaintIdDetails
 
-    // const httpResonse = await fetch('http://localhost:8080/complaints/${id}/${}')
+      dbId.value = complaintId;
+      dbDescription.value = description;
+      dbStatus.value = status; 
+      dbPriority.value = priority;
+      dbMeetingId.value = mId;
+
+
+      console.log(complaintId);
+
+
+    }
 
   })
+
 
 
   //-----get complaints:
