@@ -264,77 +264,97 @@
 
   });
 
-//===========================
-//-----Update Claim:
-//===========================
+  //===========================
+  //-----Update Claim:
+  //===========================
 
 
-const updateComplaintBtn = document.getElementById('updateComplaintBtn');
+  const updateComplaintBtn = document.getElementById('updateComplaintBtn');
 
 
-  //-----update complaint button:
-updateComplaintBtn.addEventListener('click', (event)=>{
-  event.preventDefault();
-  console.log("clicked update complaint button");
-  const id = document.getElementById('dbId').value;
-  const status = document.getElementById('dbStatus').value;
-  const priority = document.getElementById('dbPriority').value; 
-  const meetingId = document.getElementById('dbMeetingId').value; 
-  updateStatus();
-  updatePriority();
-  updateMeetingId();
-  
+    //-----update complaint button:
+  updateComplaintBtn.addEventListener('click', (event)=>{
+    event.preventDefault();
+    console.log("clicked update complaint button");
+    const complaintid = document.getElementById('dbId').value;
+    const description = document.getElementById('dbDescription').value;
+    const status = document.getElementById('dbStatus').value;
+    const priority = document.getElementById('dbPriority').value; 
+    const mId = document.getElementById('dbMeetingId').value; 
 
-  async function updateStatus(){
-    console.log("in the update complaints detail async func");
-    console.log(status);
-    console.log(priority);
-    console.log(meetingId);
+    const updatedComplaint = {
+      complaintid,
+      description,
+      status,
+      priority,
+      mId 
+    };
+
+    updateComplaintForm();
+
+  async function updateComplaintForm(){
+    // console.log("in the update complaints detail async func");
+    // console.log(status);
+    // console.log(priority);
+    // console.log(mId);
 
     // const newStatus = 
     
-    const httpResponse = await fetch(`http://localhost:8080/complaints/${id}/${status}`, {
+    const httpResponse = await fetch(`http://localhost:8080/complaints/${complaintid}`, {
       method: "PUT",
+      body: JSON.stringify(updatedComplaint),
       headers:{
         "Content-Type":"application/json"
-      }
-    })
-    if(httpResponse.status != 204){
-      alert(`There was a problem: Status didn't update`);
+      },
+    });
+
+    if(httpResponse.status === 204){
+      alert(
+      'The Complaint has been updated');
+      window.location = './home.html';
     }
-  };
+    
+   else {
+      alert(`There was a problem: The complaint didn't update`);
+    }}
+  });
+ 
 
-  async function updatePriority(){
-    const httpResponse = await fetch(`http://localhost:8080/complaints/${id}/${priority}`, {
-      method: "PUT",
-      headers:{
-        "Content-Type":"application/json"
-      }
-    })
-    if(httpResponse.status != 204){
-      alert(`There was a problem: Priority didn't update`);
-    }
+  //============================
 
-  };
+  // async function updatePriority(){
+  //   const httpResponse = await fetch(`http://localhost:8080/complaints/${id}/${priority}`, {
+  //     method: "PUT",
+  //     headers:{
+  //       "Content-Type":"application/json"
+  //     }
+  //   })
+  //   if(httpResponse.status != 204){
+  //     alert(`There was a problem: Priority didn't update`);
+  //   }
+  //   updateMeetingId();
 
-  async function updateMeetingId(){
-    const httpResponse = await fetch(`http://localhost:8080/complaints/${id}/meeting/${meetingId}`, {
-      method: "PUT",
-      headers:{
-        "Content-Type":"application/json"
-      }
-    })
+  // };
 
-    if(httpResponse.status != 204){
-      alert(`There was a problem: Meeting Id didn't update`);
-    }
-    // option 1: switch back to home page
-    window.location = './home.html';
-    } ;
-})
+  // async function updateMeetingId(){
+  //   const httpResponse = await fetch(`http://localhost:8080/complaints/${id}/meeting/${meetingId}`, {
+  //     method: "PUT",
+  //     headers:{
+  //       "Content-Type":"application/json"
+  //     }
+  //   })
 
+  //   if(httpResponse.status != 204){
+  //     alert(`There was a problem: Meeting Id didn't update`);
+  //   }
+    
+  //   // option 1: switch back to home page
+  //   window.location = './home.html';
+  //   } ;
 
 </script>
+
+
 <!-- <script src="createNewComplaint.js"></script> -->
 <!-- <script src="renderComplaintsTable.js"></script> -->
   
