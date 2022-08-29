@@ -15,7 +15,8 @@ submitComplaintBtn.addEventListener('click', async (event) => {
     m_id: -1,
   };
 
-  const httpResponse = await fetch('http://localhost:8080/complaints', {
+  const httpResponse = await fetch('https://townhallserver.bluecliff-192ceeb5.centralus.azurecontainerapps.io/complaints', {
+  // const httpResponse = await fetch('http://localhost:8080/complaints', {
     method: 'POST',
     body: JSON.stringify(newComplaint),
     headers: {

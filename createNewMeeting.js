@@ -1,8 +1,3 @@
-//push a button and the complaint modal opens
-// Value of the input gets sent to the db on submit
-//modal closes, alert window pops up with submission note
-//New meeting is put in the table
-
 //-----Date/Time-----
 
 flatpickr('#datepicker', {
@@ -57,12 +52,12 @@ submitMeetingBtn.addEventListener('click', async (event) => {
   const newMeeting = {
     id: 0,
     time,
-    // time: 1661034961, //temporary
     location,
     summary,
   };
 
-  const httpResponse = await fetch('http://localhost:8080/meetings', {
+  const httpResponse = await fetch('https://townhallserver.bluecliff-192ceeb5.centralus.azurecontainerapps.io/meetings', {
+  // const httpResponse = await fetch('http://localhost:8080/meetings', {
     method: 'POST',
     body: JSON.stringify(newMeeting),
     headers: {

@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
     <title>Townhall Grievances</title>
-    <!-- <link rel="stylesheet" href="normalize.css" /> -->
+
     <!-- All CSS Links -->
     <!-- Bootstrap CSS -->
     <link
@@ -28,7 +28,15 @@
     <!-- End Date Picker -->
     <!-- My CSS -->
     <link rel="stylesheet" href="styles.css" />
-
+<style>
+body{background: linear-gradient(
+    194deg,
+    rgba(2, 0, 36, 0.2) 0%,
+    rgba(9, 9, 121, 0.2) 35%,
+    rgba(0, 212, 255, 0.1) 100%
+  );
+position: fixed;}
+  </style>
   </head>
   <body>
     <main>
@@ -68,34 +76,10 @@
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#openComplaintModal">
                 Tell us about it
               </button>
-            
-              <!-- <div class="modal-body tempPadding tempBorder">
-                <form action="" method="post">
-                  <fieldset>
-                    <legend>Write your complaint here:</legend>
-                    <textarea
-                      name="description"
-                      id="complaintInput"
-                      placeholder="So this thing happened recently..."
-                      cols="50"
-                      rows="5"
-                      required="required"
-                    ></textarea>
-                  </fieldset>
-                  <button id="submitComplaintBtn" type="submit" name="submit_complaint" value="complaint" >
-                    Submit
-                  </button>
-                  <button class="closeModalBtn" disabled>
-                    Cancel
-                  </button>
-                </form>
-              </div> -->
           </div>
         </div>
       </div>
     </section>
-
-
 
 <!-- Modal -->
 <div class="modal fade" id="openComplaintModal" data-bs-backdrop="static" tabindex="-1" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true" data-bs-whatever="@fat">
@@ -122,13 +106,9 @@
           Submit
         </button>  
       </div>
-
-        <!-- <button id="submitComplaintBtn" type="submit" class="btn btn-primary" name="submit_complaint" value="complaint">Save changes</button> -->
     </div>
   </div>
 </div>
-
-
       <!-- ---------------------------------- -->
       <!-- ----------Dashboard here---------- -->
       <!-- ---------------------------------- -->
@@ -146,88 +126,7 @@
           </div>
       </section>
          
-        <!-- New Meeting Form -->
-
-        <!-- <div class="container tempBorder tempPadding">
-          <div id="meetingBox">
-            <h2>Schedule a New Meeting</h2>
-          
-          
-          <div>
-            <div class="">
-              <form action="" method="post">
-                <fieldset>
-                  <legend>Create a Meeting</legend> -->
-                  
-                  <!-- Date/time -->
-    
-                <!-- <div class="input-group mb-3">
-                          <div class="input-group date">
-                            <span class="input-group-append" >
-                            <span class="input-group-text">
-                            <i class="fa fa-calendar"></i></span>
-                            
-                              <input id="datepicker" class="form-control bg-white dateFieldInput">
-                            
-                              </span>
-                          </div>
-                      </div> -->
-
-                <!-- Location -->
-                  
-                <!-- <div class="input-group mb-3">
-                  <span class="input-group-text">Location</span> -->
-
-                  <!-- input -->
-
-                  <!-- <input id="locationFieldInput" type="text" class="form-control" aria-label="Text input with dropdown button" required="required"> -->
-
-                  <!-- drop down button -->
-
-                  <!-- <button  class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >Dropdown</button> -->
-
-                  <!-- drop down list -->
-
-                  <!-- <ul id="selection" class="dropdown-menu dropdown-menu-end" ;">
-                    <li><a value="The Silent Banshee" name="sb" class="dropdown-item">The Silent Banshee</a></li>
-
-                    <li><a value="The Poisoned Pen" class="dropdown-item">The Poisoned Pen</a></li>
-                    
-                    <li><a value="Sleepy Hollow Civic Center" class="dropdown-item" >Sleepy Hollow Civic Center</a></li>
-              
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a value="Location TBD" class="dropdown-item">Location TBD</a></li>
-                  </ul>
-
-                </div> -->
-                  
-                <!-- Summary -->
-                <!-- <div class="input-group">
-                  <span class="input-group-text">Meeting Topics</span>
-                  <textarea name="meetingText" id="meetingInput" 
-                  placeholder="On the docket this week..."
-                  class="form-control" 
-                  aria-label="With textarea" required="required"></textarea>
-                </div>
-              </fieldset>
-              <button id="submitMeetingBtn" type="submit">Submit</button>
-              <button class="closeModalBtn"disabled>
-                Cancel
-              </button>
-              </form>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div> -->
-  
-      
-    
-    
-    
     <!-- -----------bootstrap Scripts Here----------- -->
-
 
     <script
     src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -252,25 +151,21 @@
     <!-- <script src="createNewMeeting.js"></script> -->
 <script src="renderComplaintsTable.js"></script> 
 
-<!-- <script src="acctTypeDashboards.js"></script> -->
 
 <script>  
-    // -----Main variables-----
-    const user = localStorage.getItem('user')
-    const parseUser = JSON.parse(user);
-    const accountType = parseUser["acctType"]
-    const userFname =parseUser["fName"]
+  // -----Main variables-----
+  const user = localStorage.getItem('user')
+  const parseUser = JSON.parse(user);
+  const accountType = parseUser["acctType"]
+  const userFname =parseUser["fName"]
 
-    const hello_username = `Hello ${userFname}`;
+  const hello_username = `Hello ${userFname}`;
 
-
-
-    const welcomeBanner = document.getElementById('welcomeBanner'); //Says user's name
-    const complaintBtn = document.getElementById('complaintBtn'); //opens complaint modal
-    
-    const constituentDisplay = document.getElementById('display-constit')
+  const welcomeBanner = document.getElementById('welcomeBanner'); //Says user's name
+  const complaintBtn = document.getElementById('complaintBtn'); //opens complaint modal
   
-    const memberDisplay = document.getElementById('display-member')
+  const constituentDisplay = document.getElementById('display-constit')
+  const memberDisplay = document.getElementById('display-member')
 
     
     
@@ -284,25 +179,9 @@
       console.log( "step 1: Hi Council Member")
       renderMeetingDisplay();
       renderComplaintDisplay();
-     }
-
-    //checking for AcctType, redirect to render
-    // document.addEventListener('onload', async (event) => {
-    //   event.preventDefault();
-     
-    // });
-    
-    
+     }    
 
     </script>
-
-
-
 </main>
 </body>
-
-
-
-
-
 </html>

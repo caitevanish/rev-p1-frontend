@@ -5,7 +5,10 @@
 //-----Fetch Data-----
 
 async function getAllMeetings() {
-  const httpResponse = await fetch('http://localhost:8080/meetings');
+  const httpResponse = await fetch(
+    'https://townhallserver.bluecliff-192ceeb5.centralus.azurecontainerapps.io/meetings'
+  );
+  // const httpResponse = await fetch('http://localhost:8080/meetings');
   const meetings = await httpResponse.json();
   console.log(meetings);
   return meetings;
@@ -116,8 +119,10 @@ const renderMeetingDisplay = function () {
           <th scope="col"></th>
         </tr>
       </thead>
+      <div class=""overflow-auto>
       <tbody id="meetingTableBody">
       </tbody>
+      </div>
     </table>
     <div></div>
   </div>

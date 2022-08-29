@@ -1,3 +1,22 @@
+@font-face {
+  font-family: 'planewalkerregular';
+  src: url('planewalker-38m6-webfont.woff2') format('woff2'),
+    url('planewalker-38m6-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'planewalkerbold_italic';
+  src: url('planewalkerbolditalic-p4qr-webfont.woff2') format('woff2'),
+    url('planewalkerbolditalic-p4qr-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+}
 body {
   margin: 0;
   font-size: 0.75rem;
@@ -5,6 +24,10 @@ body {
 
 h2,
 h3 {
+  font-family: 'planewalkerbold_italic';
+  font-weight: bold;
+  font-style: normal;
+  color: goldenrod;
   text-align: center;
   padding: 0.5rem;
 }
@@ -21,23 +44,48 @@ h3 {
   padding-left: 10px;
 }
 
-.login {
+.login-body {
+  background-image: url('https://images.unsplash.com/photo-1618945034853-b46e0475da11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  background-position: 25% 20%;
+  background-size: 100%;
+  background-repeat: no-repeat;
   align-items: center;
+
+  /* border: 15px;
+  border-style: solid;
+  border-color: rgb(194, 18, 18); */
 }
 
 .login-box {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
   background-color: rgba(250, 235, 215, 0.9);
-  /* display: flex; */
+  width: 30%;
   align-items: center;
   padding: 2rem;
+  background: linear-gradient(
+    194deg,
+    rgba(2, 0, 36, 0.95) 0%,
+    rgba(9, 9, 121, 0.5) 35%,
+    rgba(0, 212, 255, 0.5) 100%
+  );
+  border-style: solid;
+  border-width: 10px;
+  border-color: maroon;
 }
 
-#login-body {
-  background-image: url('https://images.unsplash.com/photo-1492892132812-a00a8b245c45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
-  background-size: cover;
+/* #login-body {
+} */
+
+.navbar {
+  background-image: url('https://images.unsplash.com/photo-1520034475321-cbe63696469a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  background-blend-mode: multiply;
 }
 
 #welcomeBanner {
+  width: 100vw;
   /* background-color: rgb(135, 135, 236); */
   background-image: url('https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
   color: antiquewhite;
@@ -48,7 +96,7 @@ h3 {
 }
 
 #complaintBox {
-  background-color: coral;
+  background-color: rgba(9, 9, 66, 0.65);
   padding: 1rem;
   align-items: center;
 }
@@ -78,3 +126,8 @@ h3 {
   flex-direction: column;
   align-items: center;
 } */
+
+legend,
+label {
+  color: antiquewhite;
+}

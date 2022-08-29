@@ -1,9 +1,8 @@
-// const complaintTableBody = document.getElementById('complaintTableBody');
-
 //-----Fetch Data-----
 
 async function getAllComplaints() {
-  const httpResponse = await fetch('http://localhost:8080/complaints');
+  const httpResponse = await fetch('https://townhallserver.bluecliff-192ceeb5.centralus.azurecontainerapps.io/complaints');
+  // const httpResponse = await fetch('http://localhost:8080/complaints');
   const complaints = await httpResponse.json();
   console.log(complaints);
   return complaints;

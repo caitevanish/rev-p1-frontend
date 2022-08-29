@@ -23,6 +23,20 @@
 
     <!-- My CSS -->
     <link rel="stylesheet" href="styles.css" />
+    <style>body{
+      background: #0F2027;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to top, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+;
+      background-attachment: fixed;
+    }</style>
+  <!-- <style>
+    body{
+      background-image: url('https://images.unsplash.com/photo-1615800098799-0ccb261b1f92?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=710&q=80');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style> -->
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -194,7 +208,8 @@
         m_id: -1,
       };
 
-      const httpResponse = await fetch('http://localhost:8080/complaints', {
+      const httpResponse = await fetch('https://townhallserver.bluecliff-192ceeb5.centralus.azurecontainerapps.io/complaints', {
+      // const httpResponse = await fetch('http://localhost:8080/complaints', {
       method: 'POST',
       body: JSON.stringify(newComplaint),
       headers: {
@@ -244,7 +259,8 @@
     async function getComplaintDetails(){
       const id = complaintIdInput.value;
       console.log(id);
-      const httpResponse = await fetch(`http://localhost:8080/complaints/${id}`, {
+      const httpResponse = await fetch(`https://townhallserver.bluecliff-192ceeb5.centralus.azurecontainerapps.io/complaints/${id}`, {
+      // const httpResponse = await fetch(`http://localhost:8080/complaints/${id}`, {
         method:"GET",
         heaers:{
           "Content-Type":"application/json"
@@ -300,7 +316,8 @@
 
     // const newStatus = 
     
-    const httpResponse = await fetch(`http://localhost:8080/complaints/${complaintid}`, {
+    const httpResponse = await fetch(`https://townhallserver.bluecliff-192ceeb5.centralus.azurecontainerapps.io/complaints/${complaintid}`, {
+    // const httpResponse = await fetch(`http://localhost:8080/complaints/${complaintid}`, {
       method: "PUT",
       body: JSON.stringify(updatedComplaint),
       headers:{
